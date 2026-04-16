@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 10
 sidebar_label: Rancher RBAC
 title: "Rancher RBAC"
 keywords:
@@ -8,7 +8,7 @@ keywords:
   - Rancher
   - rancher
   - Rancher Integration
-description: Harvester Rancher RBAC integration alllows cluster administrator to assign cluster and project roles to govern team members' level of permissions appropriate for their functions and responsibilities.
+description: Harvester Rancher RBAC integration allows cluster administrator to assign cluster and project roles to govern team members' level of permissions appropriate for their functions and responsibilities.
 ---
 
 <head>
@@ -17,13 +17,13 @@ description: Harvester Rancher RBAC integration alllows cluster administrator to
 
 :::info
 
-Experimental feature: The Harvester Rancher RBAC integration is avaiable with Rancher 2.14.1 as an experimental feature. It has been tested to ensure that permission access is correctly enforced at the API level. Meanwhile, the user interface (UI) is still under development and may have some issues. In particular, read-only users may see certain UI options that they don't have permissions to operate. Harvester would reject requests originated from such unauthorized usages of the UI options with "permission denied" errors.
+Experimental feature: The Harvester Rancher RBAC integration is available with Rancher 2.14.1 as an experimental feature. It has been tested to ensure that permission access is correctly enforced at the API level. Meanwhile, the user interface (UI) is still under development and may have some issues. In particular, read-only users may see certain UI options that they don't have permissions to operate. Harvester would reject requests originated from such unauthorized usages of the UI options with "permission denied" errors.
 
 See GitHub [issue #10241](https://github.com/harvester/harvester/issues/10241) for the list of known UI issues.
 
 :::
 
-Harvester provides a set of [role-based access control (RBAC) roles](https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/authentication-permissions-and-global-configuration/manage-role-based-access-control-rbac) to regulate Rancher users' operational privileges on Harvester. Rancher administrator can assign these roles to team members to ensure they have the appropriate level of cluster and project scoped permissions to execute their functions in a multi-tenant environment.
+Harvester provides a set of [role-based access control (RBAC) roles](https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/authentication-permissions-and-global-configuration/manage-role-based-access-control-rbac) to regulate Rancher users' operational privileges on Harvester. A Rancher administrator can assign these roles to team members to ensure they have the appropriate level of cluster and project scoped permissions to execute their functions in a multi-tenant environment.
 
 The new roles are defined using Rancher [role templates](https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/authentication-permissions-and-global-configuration/manage-role-based-access-control-rbac/custom-roles). They are derived from Rancher's built-in roles and complement the existing Harvester/Rancher integration authentication and authorization model which seamlessly maps Rancher user permissions to Harvester resources.
 
@@ -186,7 +186,7 @@ For example, Harvester does not grant non-admin user roles with permissions to c
 
 To allow certain cluster operators to manage logging resources, you can create a new custom role that inherits from the "Manage Virtualization Resources" cluster role and add the necessary permissions to it:
 
-* Click ☰ > **User & Authentication**.
+* Click ☰ > **Users & Authentication**.
 * Navigate to the **Role Template** page.
 * Click on the **Cluster** tab. Click **Create Cluster Role**.
 * Fill in the form with the following information:
@@ -224,7 +224,7 @@ The permissions scope of roles are additive. If a user is assigned multiple role
 
 By default, users only have access to guest clusters that they own. They can view and modify resources in these clusters.
 
-A cluster user with the "Manage Virtualization Resources" cluster role can create guest clusters in any projects on the Harvester cluster. Meanwhle, a project user with the "Manage Virtualization Resources" project role can only create guest clusters in the projects that they have memberships to.
+A cluster user with the "Manage Virtualization Resources" cluster role can create guest clusters in any projects on the Harvester cluster. Meanwhile, a project user with the "Manage Virtualization Resources" project role can only create guest clusters in the projects that they have memberships to.
 
 Users with the "View Virtualization Resources" cluster or project role do not have permissions to create guest clusters.
 
@@ -235,6 +235,7 @@ A Rancher administrator can assign users as cluster members to existing guest cl
 * Navigate to the **Member Roles** section. Click **Add**.
 * Find the user from the "Member" dropdown.
 * Select the desired cluster role from the "Cluster Permissions" section.
+* Click **Add**.
 
 ## Support Bundle Permissions
 
